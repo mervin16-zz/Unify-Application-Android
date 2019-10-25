@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Unify</string>
+
+    <!-- Application -->
+    <string name="App_Name">Unify</string>
+
+    <!-- Placeholder -->
+    <string name="Placeholder_MenuItem_UnderConstruction">Under Construction</string>
+    <string name="Placeholder_Info_UnderConstruction">This page is under construction. It will be updated later.</string>
+
+
+    <!-- Menu Items -->
+    <string name="MenuItem_fromBackDropMain_Leaves">Leaves</string>
+    <string name="MenuItem_fromBackDropMain_Home">Home</string>
+
+    <string name="MenuItem_fromActionBar_Settings">Settings</string>
 </resources>

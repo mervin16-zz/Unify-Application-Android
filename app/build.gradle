@@ -31,7 +31,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //Kotlin
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //Material Design
     implementation "com.google.android.material:material:$material_version"
@@ -41,6 +41,7 @@ dependencies {
     implementation "androidx.core:core-ktx:$core_version"
 
     //Testing
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation "junit:junit:$test_junit_version"
     androidTestImplementation "androidx.test.ext:junit:$test_junit_ext_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$test_espresso_version"
