@@ -1,4 +1,4 @@
-package com.th3pl4gu3.unify
+package com.th3pl4gu3.unify.ui
 
 
 import android.os.Bundle
@@ -7,18 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.th3pl4gu3.unify.databinding.FragmentHomeBinding
+import com.th3pl4gu3.unify.R
+import com.th3pl4gu3.unify.databinding.FragmentConstructionBinding
 
-class FragmentHome : Fragment() {
+class FragmentUnderConstruction : Fragment() {
 
-    private lateinit var _binding: FragmentHomeBinding
+    private lateinit var _binding: FragmentConstructionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+        _binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_construction, container, false)
 
         return _binding.root
     }

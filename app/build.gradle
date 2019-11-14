@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'com.google.gms.google-services'
+
 android {
     compileSdkVersion 29
     defaultConfig {
@@ -39,6 +41,10 @@ dependencies {
 
     //AndroidX Core
     implementation "androidx.core:core-ktx:$core_version"
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.google.firebase:firebase-database-ktx:19.2.0'
 
     //Testing
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

@@ -1,4 +1,4 @@
-package com.th3pl4gu3.unify
+package com.th3pl4gu3.unify.ui
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -9,6 +9,7 @@ import android.util.DisplayMetrics
 import android.view.View
 import android.view.animation.Interpolator
 import android.widget.ImageView
+import com.th3pl4gu3.unify.R
 
 class BackdropClickListener  @JvmOverloads internal constructor(
     private val context: Context, private val sheet: View, private val interpolator: Interpolator? = null,

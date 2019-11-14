@@ -1,4 +1,4 @@
-package com.th3pl4gu3.unify
+package com.th3pl4gu3.unify.ui
 
 import androidx.fragment.app.Fragment
 

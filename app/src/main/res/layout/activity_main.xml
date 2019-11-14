@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:clipChildren="false"
         android:clipToPadding="false"
-        tools:context=".ActivityMain">
+        tools:context=".ui.ActivityMain">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,22 +41,21 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <LinearLayout
             android:id="@+id/Container_MainContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="?attr/actionBarSize"
             android:background="@drawable/custom_shape_background"
-            android:elevation="8dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:elevation="8dp">
 
             <FrameLayout
-                android:id="@+id/container"
+                android:id="@+id/Fragment_Container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".ActivityMain" />
+                android:layout_height="wrap_content"
+                tools:context=".ui.ActivityMain" />
 
-        </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
 
     </FrameLayout>
 

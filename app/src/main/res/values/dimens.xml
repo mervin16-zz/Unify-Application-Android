@@ -3,5 +3,7 @@
 <resources>
     <dimen name="backdrop_front_reveal_height">200dp</dimen>
 
+    <!-- Rounded Views Dimensions -->
+    <dimen name="corner_radius_default">8dp</dimen>
     <dimen name="corner_radius_cards">15dp</dimen>
 </resources>

@@ -1,4 +1,4 @@
-package com.th3pl4gu3.unify
+package com.th3pl4gu3.unify.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,9 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.th3pl4gu3.unify.R
 import com.th3pl4gu3.unify.databinding.ActivityMainBinding
+import com.th3pl4gu3.unify.ui.leaves.FragmentLeaves
 import kotlinx.android.synthetic.main.backdrop_main.view.*
 
 class ActivityMain : AppCompatActivity(), NavigationHost {
@@ -21,17 +23,20 @@ class ActivityMain : AppCompatActivity(), NavigationHost {
 
         setSupportActionBar(_binding.ToolBarMainActivityMain)
 
-        _binding.ToolBarMainActivityMain.setNavigationOnClickListener(BackdropClickListener(
-            this,
-            _binding.ContainerMainContent,
-            AccelerateDecelerateInterpolator(),
-            ContextCompat.getDrawable(this, R.drawable.ic_menu_accent),
-            ContextCompat.getDrawable(this, R.drawable.ic_close_accent)))
+        _binding.ToolBarMainActivityMain.setNavigationOnClickListener(
+            BackdropClickListener(
+                this,
+                _binding.ContainerMainContent,
+                AccelerateDecelerateInterpolator(),
+                ContextCompat.getDrawable(this, R.drawable.ic_menu_accent),
+                ContextCompat.getDrawable(this, R.drawable.ic_close_accent)
+            )
+        )
 
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
-                .add(R.id.container, FragmentHome())
+                .add(R.id.Fragment_Container, FragmentHome())
                 .commit()
         }
     }
@@ -66,7 +71,7 @@ class ActivityMain : AppCompatActivity(), NavigationHost {
     override fun navigateTo(fragment: Fragment, addToBackstack: Boolean) {
         val transaction = supportFragmentManager
             .beginTransaction()
-            .replace(R.id.container, fragment)
+            .replace(R.id.Fragment_Container, fragment)
 
         if (addToBackstack) {
             transaction.addToBackStack(null)
