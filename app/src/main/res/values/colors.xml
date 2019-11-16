@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--
+   ********** Application Specific Colors **********
+   -->
     <color name="colorPrimary">@android:color/white</color>
-    <color name="colorPrimaryDark">@color/purple_200</color>
-    <color name="colorAccent">@color/purple_100</color>
-    <color name="textColorPrimary">@color/purple_dark</color>
-    <color name="toolbarIconColor">@color/textColorPrimary</color>
-    <color name="iconColor">@color/textColorPrimary</color>
-    <color name="textInputOutlineColor">@color/colorPrimaryDark</color>
+    <color name="colorPrimaryDark">@android:color/white</color>
+    <color name="colorAccent">@color/purple_200</color>
+    <color name="colorAccentLight">@color/purple_100</color>
     <color name="backgroundDefault">@android:color/white</color>
 
+    <!-- Icon Colors -->
+    <color name="iconColorPrimary">@color/textColorPrimary</color>
+    <color name="iconColorSecondary">@android:color/white</color>
+    <color name="bottomAppBarIconColor">@color/textColorPrimary</color>
+
+    <!-- Text Colors -->
+    <color name="textColorPrimary">@color/purple_dark</color>
+    <color name="textColorSecondary">@color/grey_300</color>
+    <color name="textInputOutlineColor">@color/purple_dark</color>
+
+    <!-- Menu Colors State -->
+    <color name="itemBackColorStateActive">@color/colorAccentLight</color>
+    <color name="itemBackColorStatePressed">@color/grey_100</color>
+    <color name="itemTextColorStateActive">@color/textColorPrimary</color>
+    <color name="itemTextColorStateInactive">@color/textColorSecondary</color>
+    <color name="itemTextColorStatePressed">@color/textColorPrimary</color>
+
+    <color name="lineSeparatorColor">@color/grey_100</color>
+
+
+
+    <!--
+    ********** Material Colors **********
+    -->
+
+    <!-- Purple -->
     <color name="purple_100">#D1C4E9</color>
     <color name="purple_200">#B39DDB</color>
     <color name="purple_dark">#281255</color>
+
+    <!-- Purple -->
+    <color name="grey_100">#E7E7E7</color>
+    <color name="grey_300">#919191</color>
 </resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:id="@+id/MenuGroup_BottomAppBar_Main" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/MenuItem_fromBottomAppBar_Leaves"
+            android:title="@string/MenuItem_fromBottomAppBar_Drawer_Leaves"
+            android:tooltipText="@string/MenuItem_fromBottomAppBar_Drawer_Leaves"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/MenuItem_fromBottomAppBar_UC1"
+            android:title="@string/Placeholder_MenuItem_UnderConstruction"
+            android:tooltipText="@string/Placeholder_MenuItem_UnderConstruction"
+            app:showAsAction="ifRoom" />
+
+        <item
+            android:id="@+id/MenuItem_fromBottomAppBar_UC2"
+            android:title="@string/Placeholder_MenuItem_UnderConstruction"
+            android:tooltipText="@string/Placeholder_MenuItem_UnderConstruction"
+            app:showAsAction="ifRoom" />
+
+    </group>
+
+    <group android:id="@+id/MenuGroup_BottomAppBar_Home" android:checkableBehavior="single">
+        <item
+            android:id="@+id/MenuItem_fromBottomAppBar_Home"
+            android:title="@string/MenuItem_fromBottomAppBar_Drawer_Home"
+            android:tooltipText="@string/MenuItem_fromBottomAppBar_Drawer_Home"
+            app:showAsAction="always" />
+    </group>
+
+    <group android:id="@+id/MenuGroup_BottomAppBar_UC" android:checkableBehavior="single">
+        <item
+            android:id="@+id/MenuItem_fromBottomAppBar_UC3"
+            android:title="@string/Placeholder_MenuItem_UnderConstruction"
+            android:tooltipText="@string/Placeholder_MenuItem_UnderConstruction"
+            app:showAsAction="ifRoom" />
+    </group>
+</menu>

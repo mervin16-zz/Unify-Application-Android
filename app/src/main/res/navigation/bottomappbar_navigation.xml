@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/MenuItem_fromBottomAppBar_Home">
+
+
+    <fragment
+        android:id="@+id/MenuItem_fromBottomAppBar_Leaves"
+        android:name="com.th3pl4gu3.unify.ui.leaves.FragmentLeaves"
+        android:label="FragmentLeaves" />
+
+    <fragment
+        android:id="@+id/MenuItem_fromBottomAppBar_UC1"
+        android:name="com.th3pl4gu3.unify.ui.FragmentUnderConstruction"
+        android:label="FragmentUnderConstruction" />
+
+    <fragment
+        android:id="@+id/MenuItem_fromBottomAppBar_UC2"
+        android:name="com.th3pl4gu3.unify.ui.FragmentUnderConstruction"
+        android:label="FragmentUnderConstruction" />
+
+    <fragment
+        android:id="@+id/MenuItem_fromBottomAppBar_Home"
+        android:name="com.th3pl4gu3.unify.ui.FragmentHome"
+        android:label="FragmentHome" />
+
+    <fragment
+        android:id="@+id/MenuItem_fromBottomAppBar_UC3"
+        android:name="com.th3pl4gu3.unify.ui.FragmentUnderConstruction"
+        android:label="FragmentUnderConstruction" />
+
+</navigation>

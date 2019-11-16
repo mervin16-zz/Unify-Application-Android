@@ -3,16 +3,12 @@ package com.th3pl4gu3.unify.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.animation.AccelerateDecelerateInterpolator
-import androidx.core.content.ContextCompat
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import com.th3pl4gu3.unify.R
 import com.th3pl4gu3.unify.databinding.ActivityMainBinding
-import com.th3pl4gu3.unify.ui.leaves.FragmentLeaves
-import kotlinx.android.synthetic.main.backdrop_main.view.*
 
-class ActivityMain : AppCompatActivity(), NavigationHost {
+class ActivityMain : AppCompatActivity(){
 
     private lateinit var _binding: ActivityMainBinding
 
@@ -21,62 +17,26 @@ class ActivityMain : AppCompatActivity(), NavigationHost {
 
         _binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        setSupportActionBar(_binding.ToolBarMainActivityMain)
-
-        _binding.ToolBarMainActivityMain.setNavigationOnClickListener(
-            BackdropClickListener(
-                this,
-                _binding.ContainerMainContent,
-                AccelerateDecelerateInterpolator(),
-                ContextCompat.getDrawable(this, R.drawable.ic_menu_accent),
-                ContextCompat.getDrawable(this, R.drawable.ic_close_accent)
-            )
-        )
-
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .add(R.id.Fragment_Container, FragmentHome())
-                .commit()
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        _binding.root.Button_MainActivity_BackdropMenu_Leaves.setOnClickListener{
-            this.navigateTo(FragmentLeaves(), false)
-        }
-
-        _binding.root.Button_MainActivity_BackdropMenu_Home.setOnClickListener{
-            this.navigateTo(FragmentHome(), false)
-        }
-
-        _binding.root.Button_MainActivity_BackdropMenu_UC1.setOnClickListener{
-            this.navigateTo(FragmentUnderConstruction(), false)
-        }
+        //Set the bottom bar as SupportActionBar
+        setSupportActionBar(_binding.BottomAppBarFromMainActivityMain)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_bottomappbar_main, menu)
         return true
     }
 
-    /**
-     * Navigate to the given fragment.
-     *
-     * @param fragment       Fragment to navigate to.
-     * @param addToBackstack Whether or not the current fragment should be added to the backstack.
-     */
-    override fun navigateTo(fragment: Fragment, addToBackstack: Boolean) {
-        val transaction = supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.Fragment_Container, fragment)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                val bottomAppBarDialog = RoundedBottomDialogFragmentBottomAppBarDrawer()
+                bottomAppBarDialog.show(supportFragmentManager, bottomAppBarDialog.tag)
+                true
+            }
 
-        if (addToBackstack) {
-            transaction.addToBackStack(null)
+            else -> false
         }
-
-        transaction.commit()
     }
+
 }

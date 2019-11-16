@@ -5,58 +5,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        tools:context=".ui.ActivityMain">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/NestedScroll_fromMainActivity_Container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:paddingTop="88dp"
-            style="@style/Widget.Unify.Backdrop">
+            android:fillViewport="true">
 
-            <include
-                layout="@layout/backdrop_main" />
+            <LinearLayout
+                android:id="@+id/LinearLayout_fromMainActivity_Container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <fragment
+                    android:id="@+id/Container_fromMainActivity_BottomAppBarFragments"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="?attr/actionBarSize"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/bottomappbar_navigation"
+                    tools:layout="@layout/fragment_leaves"/>
 
+            </LinearLayout>
 
-        <com.google.android.material.appbar.AppBarLayout
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/BottomAppBar_fromMainActivity_Main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:elevation="0dp">
+            android:layout_gravity="bottom"
+            app:fabCradleVerticalOffset="@null"
+            app:fabCradleMargin="@null"
+            app:fabCradleRoundedCornerRadius="@null"
+            app:fabAlignmentMode="center"
+            app:navigationIcon="@drawable/ic_menu_accent"
+            app:menu="@menu/menu_bottomappbar_main"/>
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/ToolBar_MainActivity_Main"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:title="Unify"
-                app:navigationIcon="@drawable/ic_menu_accent"
-                style="@style/Widget.Unify.Toolbar"/>
 
-        </com.google.android.material.appbar.AppBarLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/FAB_fromMainActivity_BottomAppBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            android:backgroundTint="@color/colorAccent"
+            app:tint="@color/bottomAppBarIconColor"
+            app:borderWidth="@null"
+            app:elevation="@null"
+            app:layout_anchor="@id/BottomAppBar_fromMainActivity_Main"/>
 
-        <LinearLayout
-            android:id="@+id/Container_MainContent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:background="@drawable/custom_shape_background"
-            android:elevation="8dp">
-
-            <FrameLayout
-                android:id="@+id/Fragment_Container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:context=".ui.ActivityMain" />
-
-        </LinearLayout>
-
-    </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        app:behavior_hideable="true"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <ImageView
+            android:id="@+id/Icon_fromFragmentBottomAppBarDrawer_User"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_user_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Text_fromFragmentBottomAppBarDrawer_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/App_Name"
+            app:layout_constraintBottom_toTopOf="@+id/Text_fromFragmentBottomAppBarDrawer_Subtitle"
+            app:layout_constraintStart_toEndOf="@+id/Icon_fromFragmentBottomAppBarDrawer_User"
+            app:layout_constraintTop_toTopOf="@+id/Icon_fromFragmentBottomAppBarDrawer_User"
+            style="@style/TextAppearance.Unify.Menu.Title" />
+
+        <TextView
+            android:id="@+id/Text_fromFragmentBottomAppBarDrawer_Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome, User"
+            style="@style/TextAppearance.Unify.Menu.Subtitle"
+            app:layout_constraintBottom_toBottomOf="@+id/Icon_fromFragmentBottomAppBarDrawer_User"
+            app:layout_constraintStart_toStartOf="@+id/Text_fromFragmentBottomAppBarDrawer_Title"
+            app:layout_constraintTop_toBottomOf="@+id/Text_fromFragmentBottomAppBarDrawer_Title" />
+
+        <View
+            android:id="@+id/LineSeparator_fromFragmentBottomAppBarDrawer_Header"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/lineSeparatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Text_fromFragmentBottomAppBarDrawer_Subtitle" />
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/NavigationView_fromFragmentBottomAppBarDrawer_Drawer_NavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.Unify.Menu.LineDivider"
+            app:elevation="0dp"
+            app:itemBackground="@drawable/custom_bottomappbar_drawer_item_background_state"
+            app:itemTextColor="@color/custom_bottomappbar_drawer_item_text_state"
+            app:menu="@menu/menu_bottomappbar_drawer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LineSeparator_fromFragmentBottomAppBarDrawer_Header"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

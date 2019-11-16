@@ -28,21 +28,8 @@ class FragmentLeaves : Fragment() {
         //Initiate the Absence Leaves Recyclerview and return the adapter
         initiateAbsencesList().submitList(generateDummyAbsences())
 
-        //Initiate the Absence Buttons Recyclerview and return the adapter
-        initiateAbsenceButtonsList().submitList(generateDummyAbsences())
-
         return _binding.root
     }
-
-    override fun onStart() {
-        super.onStart()
-
-        _binding.ButtonLeavesFragmentAddLeaves.setOnClickListener{
-            val bottomAppBarDialog = BottomSheetDialogFragmentAddLeavesField()
-            bottomAppBarDialog.show(activity!!.supportFragmentManager, bottomAppBarDialog.tag)
-        }
-    }
-
 
     private fun initiateAbsencesList(): LeavesAdapter{
         _binding.LeavesList.layoutManager = GridLayoutManager(context, 2)
@@ -51,15 +38,6 @@ class FragmentLeaves : Fragment() {
         _binding.LeavesList.adapter = adapterLeaves
 
         return adapterLeaves
-    }
-
-    private fun initiateAbsenceButtonsList(): LeavesButtonAdapter{
-        _binding.LeavesButtonList.layoutManager = LinearLayoutManager(context)
-        val adapterButton = LeavesButtonAdapter()
-
-        _binding.LeavesButtonList.adapter = adapterButton
-
-        return adapterButton
     }
 
     //Need to delete after implementing database

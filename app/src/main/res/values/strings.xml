@@ -9,8 +9,8 @@
 
 
     <!-- Menu Items -->
-    <string name="MenuItem_fromBackDropMain_Leaves">Leaves</string>
-    <string name="MenuItem_fromBackDropMain_Home">Home</string>
+    <string name="MenuItem_fromBottomAppBar_Drawer_Leaves">Leaves</string>
+    <string name="MenuItem_fromBottomAppBar_Drawer_Home">Home</string>
 
-    <string name="MenuItem_fromActionBar_Settings">Settings</string>
+    <string name="MenuItem_fromBottomAppBar_Main_Settings">Settings</string>
 </resources>
